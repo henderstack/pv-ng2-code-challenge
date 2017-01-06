@@ -1,0 +1,47 @@
+<article>
+  <div class="page-header">
+      <h1>Array Element Substitution, based on Multiples</h1>
+  </div>
+  <!-- Begin Accordion -->
+  <accordion [closeOthers]="oneAtATime">
+    <accordion-group  #group
+                    [isOpen]="status.isFirstOpen"
+                    [isDisabled]="status.isFirstDisabled">
+      <div accordion-heading>
+        Basic Array (1 to 100)
+        <i class="pull-right float-xs-right glyphicon"
+        [ngClass]="{'glyphicon-chevron-down': group?._isOpen, 'glyphicon-chevron-right': !group?._isOpen}"></i>
+      </div>     
+      <div class="row">
+        <div class="col-md-12">
+          <p [innerText]="substituteArray"></p>
+        </div>
+      </div>     
+    </accordion-group>
+    <accordion-group #group1 [isOpen]="status.open">
+      <div accordion-heading>
+        Array with registerPipe Transform (Multiples of 3 and 5 Exclusive, and Combined)
+        <i class="pull-right float-xs-right glyphicon"
+        [ngClass]="{'glyphicon-chevron-down': group1?._isOpen, 'glyphicon-chevron-right': !group1?._isOpen}"></i>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p [innerText]="registerArray | registerPipe"></p>
+        </div>
+      </div>
+    </accordion-group>
+    <accordion-group #group2 [isOpen]="status.open">
+      <div accordion-heading>
+          Array with diagnosePipe Transform (Multiples of 2 and 7 Exclusive, and Combined)
+          <i class="pull-right float-xs-right glyphicon"
+            [ngClass]="{'glyphicon-chevron-down': group2?._isOpen, 'glyphicon-chevron-right': !group2?._isOpen}"></i>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p [innerText]="diagnoseArray | diagnosePipe"></p>
+        </div>
+      </div>
+    </accordion-group>
+  </accordion>
+</article>
+<!-- End Accordion -->

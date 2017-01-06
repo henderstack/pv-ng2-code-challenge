@@ -1,0 +1,1 @@
+export const ONEONEHUNDRED:Array<String> = Array.from(Array(100)).map((e,i)=>(i+1).toString());

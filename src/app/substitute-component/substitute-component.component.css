@@ -1,0 +1,16 @@
+article {
+    margin-top: 80px;
+}
+
+div > p {
+    word-wrap: break-word;
+}
+
+accordion-group>.panel{
+    background-color: #666666;
+    color: #ebebeb;
+}
+
+accordion-group>.panel a:hover {
+    text-decoration: none;
+}
